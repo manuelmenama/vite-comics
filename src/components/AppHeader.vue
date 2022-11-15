@@ -1,7 +1,63 @@
 <script>
 export default {
-      name: 'AppHeader'
-}
+      name: 'AppHeader',
+      data() {
+        return {
+          headerLink: [
+            {
+              text: 'CHARACTERS',
+              link: '#',
+              current: false
+            },
+            {
+              text: 'COMICS',
+              link: '#',
+              current: false
+            },
+            {
+              text: 'MOVIES',
+              link: '#',
+              current: true
+            },
+            {
+              text: 'TV',
+              link: '#',
+              current: false
+            },
+            {
+              text: 'GAMES',
+              link: '#',
+              current: false
+            },
+            {
+              text: 'COLLECTIBLES',
+              link: '#',
+              current: false
+            },
+            {
+              text: 'VIDEOS',
+              link: '#',
+              current: false
+            },
+            {
+              text: 'FANS',
+              link: '#',
+              current: false
+            },
+            {
+              text: 'NEWS',
+              link: '#',
+              current: false
+            },
+            {
+              text: 'SHOP',
+              link: '#',
+              current: false
+            }
+          ]
+        }
+      }
+} 
 </script>
 
 <template>
@@ -16,16 +72,13 @@ export default {
 
       <nav>
         <ul>
-          <li><a href="#">CHARACTERS</a></li>
-          <li><a href="#">COMICS</a></li>
-          <li><a href="#">MOVIES</a></li>
-          <li><a href="#">TV</a></li>
-          <li><a href="#">GAMES</a></li>
-          <li><a href="#">COLLECTIBLES</a></li>
-          <li><a href="#">VIDEOS</a></li>
-          <li><a href="#">FANS</a></li>
-          <li><a href="#">NEWS</a></li>
-          <li><a href="#">SHOP</a></li>
+          <li
+            v-for="(link, index) in headerLink"
+            :key="index">
+            <a
+              :class="{'active': link.current}"
+              :href="link.link">{{link.text}}</a>
+          </li>
         </ul>
       </nav>
 
@@ -42,19 +95,44 @@ export default {
 
 header{
   background-color: $header-color;
-  height: 100px;
+  height: 130px;
   .col{
+    height: 100%;
     @include flex('only');
-    .logo img{
-      width: 80px;
+    .logo{
+      width: 30%;
+      height: 100%;
+      @include flex('start-center');
+      img{
+        height: 80px;
+      }
     }
     nav{
+      width: 70%;
       font-size: 0.9rem;
       font-weight: 600;
       ul{
+
         @include removeStyle();
-        @include flex('only');
+        @include flex('between');
+        line-height: 130px;
         li a{
+          display: inline-block;
+          height: 100%;
+          &.active{
+            color: $main-color;
+            position: relative;
+            &::after{
+              content: '';
+              display: inline-block;
+              width: 100%;
+              border-bottom: 5px solid $main-color;
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              z-index: 999;
+            }
+          }
           @include removeADecoration();
         }
       }

@@ -8,7 +8,7 @@ export default {
 
   <main>
 
-    m
+    <h1>Main</h1>
 
   </main>
   
@@ -17,5 +17,13 @@ export default {
 <style lang="scss" scoped>
 
 @use '../style/partials/variables' as *;
+
+main{
+  background-color: $background-color;
+  h1{
+    padding: 40px 0;
+    color: white;
+  }
+}
 
 </style>
