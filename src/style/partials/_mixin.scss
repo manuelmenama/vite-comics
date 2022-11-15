@@ -1,0 +1,16 @@
+@use './variables' as *;
+
+@mixin removeStyle {
+  list-style: none;
+}
+
+@mixin removeADecoration {
+  text-decoration: none;
+  color: $header-txt-color;
+}
+
+@mixin flex ($type: 'only') {
+
+  display: flex;
+  
+}
