@@ -8,7 +8,7 @@ export default {
 
   <main>
 
-    <h1>Main</h1>
+    <h1 class="container">Main</h1>
 
   </main>
   
