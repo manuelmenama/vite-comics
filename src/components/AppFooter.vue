@@ -132,16 +132,19 @@ export default {
         <div class="footer-link">
           <ul>
     
-            <li>
+            <li
+              v-for="(title, index) in footerLinks"
+              :key="index">
     
-              <h3>Prova</h3>
+              <h3>{{title.section}}</h3>
     
               <ul>
-                <li><a href="#">Provina</a></li>
-                <li><a href="#">Provina</a></li>
-                <li><a href="#">Provina</a></li>
-                <li><a href="#">Provina</a></li>
-                <li><a href="#">Provina</a></li>
+
+                <li
+                  (link, index)>
+                  <a href=""></a>
+                </li>
+                
               </ul>
     
             </li>
