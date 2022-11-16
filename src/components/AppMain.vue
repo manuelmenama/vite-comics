@@ -1,6 +1,11 @@
 <script>
+import AppCTAElement from './AppCTAElement.vue';
+
 export default {
-      name: 'AppMain'
+  name: 'AppMain',
+  components: {
+    AppCTAElement
+  }
 }
 </script>
 
@@ -8,7 +13,16 @@ export default {
 
   <main>
 
+    <div class="jumbotron">
+
+      <img src="../assets/img/jumbotron.jpg" alt="">
+
+    </div>
+
     <h1 class="container">Main</h1>
+
+    
+    <AppCTAElement />
 
   </main>
   

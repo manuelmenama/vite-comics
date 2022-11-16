@@ -162,6 +162,23 @@ export default {
 
     <div class="lower-footer container">
 
+      <div class="button-container">
+
+        <a href="#">SIGN-UP NOW!</a>
+
+      </div>
+
+      <div class="followus-container">
+
+        <h2>FOLLOW US</h2>
+
+        <img src="../assets/img/footer-facebook.png" alt="fb-logo">
+        <img src="../assets/img/footer-twitter.png" alt="twitter-logo">
+        <img src="../assets/img/footer-youtube.png" alt="yt-logo">
+        <img src="../assets/img/footer-pinterest.png" alt="pintrest-logo">
+        <img src="../assets/img/footer-periscope.png" alt="periscope-logo">
+
+      </div>
 
   
     </div>
@@ -190,6 +207,7 @@ footer{
       height: 100%;
       ul.first-ul{
         height: 100%;
+        width: 50%;
         h3{
           margin-bottom: 1rem;
           margin-top: 1rem;
@@ -200,6 +218,7 @@ footer{
           margin: 1rem;
           display: flex;
           flex-direction: column;
+          flex-wrap: wrap;
         }
         li.first-li a{
           @include removeADecoration();
@@ -217,12 +236,32 @@ footer{
       width: 50%;
       img{
         scale: 1.3;
-        transform: translateY(-10%);
+        min-width: 500px;
       }
     }
   }
   .lower-footer{
     height: 30%;
+    
+    @include flex('between');
+    align-items: center;
+
+    .button-container a{
+      display: inline-block;
+      @include removeADecoration();
+      color: $main-color;
+      border: 2px solid $main-color;
+      padding: 0.5rem 1rem;
+    }
+    .followus-container{
+      
+      @include flex('only');
+      align-items: center;
+
+      img{
+        margin-left: 1rem;
+      }
+    }
   }
 }
 
