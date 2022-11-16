@@ -206,19 +206,25 @@ footer{
       width: 50%;
       height: 100%;
       ul.first-ul{
-        height: 100%;
-        width: 50%;
+        height: 400px;
+        width: calc(100% / 3);
+        @include flex('only');
+        flex-direction: column;
+        flex-wrap: wrap;
+
         h3{
           margin-bottom: 1rem;
           margin-top: 1rem;
         }
         @include removeStyle();
 
+        li.first-li:nth-child(2){
+          align-self: flex-end;
+        }
+
         li.first-li{
+          width: 80%;
           margin: 1rem;
-          display: flex;
-          flex-direction: column;
-          flex-wrap: wrap;
         }
         li.first-li a{
           @include removeADecoration();

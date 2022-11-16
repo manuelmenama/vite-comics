@@ -26,3 +26,12 @@
   }
   
 }
+
+@mixin button {
+
+  background-color: $main-color;
+  padding: 5px 10px;
+  display: inline-block;
+  color: $text-color;
+  
+}
