@@ -130,9 +130,10 @@ export default {
     <div class="upper-footer">
       <div class="col container">
         <div class="footer-link">
-          <ul>
+          <ul class="first-ul">
     
             <li
+              class="first-li"
               v-for="(title, index) in footerLinks"
               :key="index">
     
@@ -141,8 +142,9 @@ export default {
               <ul>
 
                 <li
-                  (link, index)>
-                  <a href=""></a>
+                  v-for="(link, index) in title.titles"
+                  :key="index">
+                  <a :href="link.link">{{link.title}}</a>
                 </li>
                 
               </ul>
@@ -179,21 +181,32 @@ footer{
   width: 100%;
   .upper-footer{
     width: 100%;
+    height: 100%;
     .col{
       @include flex('only');
     }
     .footer-link{
       width: 50%;
-      ul{
+      height: 100%;
+      ul.first-ul{
+        height: 100%;
         h3{
           margin-bottom: 1rem;
+          margin-top: 1rem;
         }
         @include removeStyle();
-        li a{
+
+        li.first-li{
+          margin: 1rem;
+          display: flex;
+          flex-direction: column;
+        }
+        li.first-li a{
           @include removeADecoration();
           color: $footer-link-col;
           font-size: 0.8rem;
           margin-bottom: 0.2rem;
+          
         }
       }
     }
