@@ -212,11 +212,15 @@ footer{
         flex-direction: column;
         flex-wrap: wrap;
 
+        li{
+          @include removeStyle();
+        }
+
         h3{
           margin-bottom: 1rem;
           margin-top: 1rem;
         }
-        @include removeStyle();
+        
 
         li.first-li:nth-child(2){
           align-self: flex-end;
